@@ -10,7 +10,7 @@ public class ScanViewModel extends ViewModel {
 
     public ScanViewModel() {
         mText = new MutableLiveData<>();
-        mText.setValue("This is the scan fragment");
+        mText.setValue("");
     }
 
     public LiveData<String> getText() {

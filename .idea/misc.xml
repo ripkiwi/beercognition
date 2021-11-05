@@ -10,8 +10,15 @@
         <entry key="..\:/Users/kevin/Desktop/.inno/beercognition/finish/src/main/res/layout/activity_main.xml" value="0.259375" />
         <entry key="..\:/Users/kevin/Desktop/.inno/beercognition/finish/src/main/res/layout/activity_main_tensorflow_camera.xml" value="0.1" />
         <entry key="..\:/Users/kevin/Desktop/.inno/beercognition/finish/src/main/res/layout/activity_startup.xml" value="0.259375" />
+        <entry key="..\:/Users/kevin/Desktop/.inno/beercognition/finish/src/main/res/layout/app_bar_main.xml" value="0.16302083333333334" />
         <entry key="..\:/Users/kevin/Desktop/.inno/beercognition/finish/src/main/res/layout/content_main.xml" value="0.259375" />
+        <entry key="..\:/Users/kevin/Desktop/.inno/beercognition/finish/src/main/res/layout/fragment_about.xml" value="0.13385416666666666" />
         <entry key="..\:/Users/kevin/Desktop/.inno/beercognition/finish/src/main/res/layout/fragment_beer.xml" value="0.259375" />
+        <entry key="..\:/Users/kevin/Desktop/.inno/beercognition/finish/src/main/res/layout/fragment_home.xml" value="0.16302083333333334" />
+        <entry key="..\:/Users/kevin/Desktop/.inno/beercognition/finish/src/main/res/layout/fragment_scan.xml" value="0.16302083333333334" />
+        <entry key="..\:/Users/kevin/Desktop/.inno/beercognition/finish/src/main/res/layout/nav_header_main.xml" value="0.16302083333333334" />
+        <entry key="..\:/Users/kevin/Desktop/.inno/beercognition/finish/src/main/res/layout/recognition_item.xml" value="0.16302083333333334" />
+        <entry key="..\:/Users/kevin/Desktop/.inno/beercognition/finish/src/main/res/menu/activity_main_drawer.xml" value="0.16302083333333334" />
         <entry key="..\:/Users/kevin/Desktop/.inno/beercognition/finish/src/main/res/menu/main.xml" value="0.259375" />
       </map>
     </option>

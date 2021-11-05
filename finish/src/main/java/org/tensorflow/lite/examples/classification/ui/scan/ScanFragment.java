@@ -21,24 +21,23 @@ public class ScanFragment extends Fragment {
     private ScanViewModel scanViewModel;
     private FragmentScanBinding binding;
 
-    public View onCreateView(@NonNull LayoutInflater inflater,
-                             ViewGroup container, Bundle savedInstanceState) {
-        scanViewModel =
-                new ViewModelProvider(this).get(ScanViewModel.class);
+    public View onCreateView(@NonNull LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
+        scanViewModel = new ViewModelProvider(this).get(ScanViewModel.class);
+
+        //Opens Image Recognition
+        Intent intent = new Intent(getActivity(), MainActivityTensorflowCamera.class);
+        startActivity(intent);
 
         binding = FragmentScanBinding.inflate(inflater, container, false);
         View root = binding.getRoot();
 
-        final TextView textView = binding.textGallery;
+        /*final TextView textView = binding.textGallery;
         scanViewModel.getText().observe(getViewLifecycleOwner(), new Observer<String>() {
             @Override
             public void onChanged(@Nullable String s) {
                 textView.setText(s);
             }
-        });
-
-        Intent intent = new Intent(getActivity(), MainActivityTensorflowCamera.class);
-        startActivity(intent);
+        });*/
 
         return root;
     }
