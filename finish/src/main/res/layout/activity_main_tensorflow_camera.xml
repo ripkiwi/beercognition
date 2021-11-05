@@ -36,10 +36,10 @@
             android:background="#8000">
 
                 <ImageView
-                    android:layout_width="wrap_content"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:src="@drawable/tfl2_logo"
-                    android:contentDescription="@string/tensorflow_lite_logo_description" />
+                    android:contentDescription="@string/app_name"
+                    android:src="@drawable/beercognition" />
 
         </androidx.appcompat.widget.Toolbar>
 

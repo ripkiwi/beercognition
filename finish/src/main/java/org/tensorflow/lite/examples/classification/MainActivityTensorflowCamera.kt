@@ -216,8 +216,6 @@ class MainActivityTensorflowCamera : AppCompatActivity() {
         // Initializing the flowerModel by lazy so that it runs in the same thread when the process
         // method is called.
         private val beerModel: BeerModel by lazy{
-
-            // TODO 6. Optional GPU acceleration
             val compatList = CompatibilityList()
 
             val options = if(compatList.isDelegateSupportedOnThisDevice) {

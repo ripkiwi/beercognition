@@ -25,6 +25,12 @@
             android:theme="@style/Theme.Beercognition.NoActionBar">
         </activity>
         <activity
+            android:name=".MainActivityTensorflowCamera"
+            android:exported="true"
+            android:screenOrientation="portrait"
+            android:theme="@style/Theme.Beercognition.NoActionBar">
+        </activity>
+        <activity
             android:name=".StartupActivity"
             android:exported="true"
             android:background="@color/goldenPoppy"
