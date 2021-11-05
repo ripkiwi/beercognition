@@ -2,9 +2,8 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/.idea/modules/TFL_Classify.iml" filepath="$PROJECT_DIR$/.idea/modules/TFL_Classify.iml" />
-      <module fileurl="file://$PROJECT_DIR$/.idea/modules/finish/TFL_Classify.finish.iml" filepath="$PROJECT_DIR$/.idea/modules/finish/TFL_Classify.finish.iml" />
-      <module fileurl="file://$PROJECT_DIR$/.idea/modules/start/TFL_Classify.start.iml" filepath="$PROJECT_DIR$/.idea/modules/start/TFL_Classify.start.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/Beercognition.iml" filepath="$PROJECT_DIR$/.idea/modules/Beercognition.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/finish/Beercognition.finish.iml" filepath="$PROJECT_DIR$/.idea/modules/finish/Beercognition.finish.iml" />
     </modules>
   </component>
 </project>
