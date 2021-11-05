@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Beercognition</string>
+    <string name="startup_slogan">SCAN JE BIER</string>
+    <string name="startup_slogan_2">DRINK MET PLEZIER</string>
+    <string name="menu_home">Start</string>
+    <string name="action_settings">Instellingen</string>
+    <string name="menu_camera">Scan</string>
+    <string name="menu_about">Info</string>
+    <string name="menu_beers">Bieren</string>
+    <string name="details_percentage">Alcohol %</string>
+    <string name="details_jaar">Jaar</string>
+    <string name="details_brouwerij">Brouwerij</string>
+    <string name="details_title">Details</string>
+    <string name="details_desc_beer">Foto van je pint</string>
+</resources>
