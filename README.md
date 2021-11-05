@@ -1,8 +1,13 @@
 ## Beercognition Team
-Daan Heivers
-Kuba Wojtas
-Hannes Neirynck
-Kevin Burgers
+
+ Daan Heivers
+
+ Kuba Wojtas
+
+ Hannes Neirynck
+
+ Kevin Burgers
+
 
 ## License
 
