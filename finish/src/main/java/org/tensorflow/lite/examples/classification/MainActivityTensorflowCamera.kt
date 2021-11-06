@@ -2,7 +2,6 @@ package org.tensorflow.lite.examples.classification
 
 import android.Manifest
 import android.annotation.SuppressLint
-import android.app.PendingIntent.getActivity
 import android.content.Context
 import android.content.Intent
 import android.content.pm.PackageManager
@@ -12,35 +11,25 @@ import android.os.Bundle
 import android.util.Log
 import android.util.Size
 import android.widget.Toast
-
 import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
-import androidx.camera.core.Camera
-import androidx.camera.core.CameraSelector
-import androidx.camera.core.ImageAnalysis
-import androidx.camera.core.ImageProxy
-import androidx.camera.core.Preview
+import androidx.camera.core.*
 import androidx.camera.lifecycle.ProcessCameraProvider
 import androidx.camera.view.PreviewView
 import androidx.core.app.ActivityCompat
-import androidx.core.content.ContentProviderCompat.requireContext
 import androidx.core.content.ContextCompat
 import androidx.core.content.ContextCompat.startActivity
 import androidx.lifecycle.Observer
 import androidx.recyclerview.widget.RecyclerView
-import org.checkerframework.checker.units.qual.Length
-
 import org.tensorflow.lite.examples.classification.ml.BeerModel
 import org.tensorflow.lite.examples.classification.ui.RecognitionAdapter
 import org.tensorflow.lite.examples.classification.util.YuvToRgbConverter
 import org.tensorflow.lite.examples.classification.viewmodel.Recognition
 import org.tensorflow.lite.examples.classification.viewmodel.RecognitionListViewModel
+import org.tensorflow.lite.gpu.CompatibilityList
 import org.tensorflow.lite.support.image.TensorImage
 import org.tensorflow.lite.support.model.Model
-
 import java.util.concurrent.Executors
-import org.tensorflow.lite.gpu.CompatibilityList
-import java.security.AccessController.getContext
 
 // Constants
 private const val MAX_RESULT_DISPLAY = 3 // Maximum number of results displayed
@@ -235,15 +224,18 @@ class MainActivityTensorflowCamera : AppCompatActivity() {
             // TODO 4: Converting the top probability items into a list of recognitions
             for (output in outputs) {
                 items.add(Recognition(output.label, output.score))
-                if(output.score > 80) {
-                    //TODO Return to main activity with label 'recognizedBeer' as extra parameter
+
+                //TODO Return to main activity with label 'recognizedBeer' as extra parameter
+                /*if(output.score > 80) {
+
                     val recognizedBeer = output.label
                     val intent = Intent(this@MainActivityTensorflowCamera, MainActivity::class.java).apply{
                         putExtra("recognizedBeer",recognizedBeer)
                     }
                     startActivity(intent)
-                }
+                }*/
 
+                //TODO Remove as this is testing code for debugging purposes
                 Log.i(TAG, "Label: " + output.label + " || Score: " + output.score)
             }
 
