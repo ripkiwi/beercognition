@@ -1,24 +1,9 @@
-/*
- * Copyright (C) 2020 The Android Open Source Project
- *
- * Licensed under the Apache License, Version 2.0 (the "License");
- * you may not use this file except in compliance with the License.
- * You may obtain a copy of the License at
- *
- *      http://www.apache.org/licenses/LICENSE-2.0
- *
- * Unless required by applicable law or agreed to in writing, software
- * distributed under the License is distributed on an "AS IS" BASIS,
- * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
- * See the License for the specific language governing permissions and
- * limitations under the License.
- */
-
 package org.tensorflow.lite.examples.classification
 
 import android.Manifest
 import android.annotation.SuppressLint
 import android.content.Context
+import android.content.Intent
 import android.content.pm.PackageManager
 import android.graphics.Bitmap
 import android.graphics.Matrix
@@ -38,8 +23,10 @@ import androidx.camera.lifecycle.ProcessCameraProvider
 import androidx.camera.view.PreviewView
 import androidx.core.app.ActivityCompat
 import androidx.core.content.ContextCompat
+import androidx.core.content.ContextCompat.startActivity
 import androidx.lifecycle.Observer
 import androidx.recyclerview.widget.RecyclerView
+import org.checkerframework.checker.units.qual.Length
 
 import org.tensorflow.lite.examples.classification.ml.BeerModel
 import org.tensorflow.lite.examples.classification.ui.RecognitionAdapter
@@ -209,8 +196,7 @@ class MainActivityTensorflowCamera : AppCompatActivity() {
         }, ContextCompat.getMainExecutor(this))
     }
 
-    private class ImageAnalyzer(ctx: Context, private val listener: RecognitionListener) :
-        ImageAnalysis.Analyzer {
+    private class ImageAnalyzer(ctx: Context, private val listener: RecognitionListener) : ImageAnalysis.Analyzer {
 
         // TODO 1: Add class variable TensorFlow Lite Model
         // Initializing the flowerModel by lazy so that it runs in the same thread when the process
@@ -226,7 +212,7 @@ class MainActivityTensorflowCamera : AppCompatActivity() {
                 Model.Options.Builder().setNumThreads(4).build()
             }
 
-            // Initialize the Flower Model
+            // Initialize the Beer Model
             BeerModel.newInstance(ctx, options)
         }
 
@@ -246,6 +232,12 @@ class MainActivityTensorflowCamera : AppCompatActivity() {
             // TODO 4: Converting the top probability items into a list of recognitions
             for (output in outputs) {
                 items.add(Recognition(output.label, output.score))
+                if(output.score > 80) {
+                    val recognizedBeer = output.label
+                    //TODO Return to main activity with label 'recognizedBeer' as extra parameter
+                }
+
+                Log.i(TAG, "Label: " + output.label + " || Score: " + output.score)
             }
 
 //            // START - Placeholder code at the start of the codelab. Comment this block of code out.
@@ -256,6 +248,9 @@ class MainActivityTensorflowCamera : AppCompatActivity() {
 
             // Return the result
             listener(items.toList())
+
+            // TODO : Remove, just for testing purposes -> kiwi
+            Log.i(TAG, items.toString())
 
             // Close the image,this tells CameraX to feed the next image to the analyzer
             imageProxy.close()
