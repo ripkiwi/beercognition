@@ -2,6 +2,7 @@ package org.tensorflow.lite.examples.classification
 
 import android.Manifest
 import android.annotation.SuppressLint
+import android.app.PendingIntent.getActivity
 import android.content.Context
 import android.content.Intent
 import android.content.pm.PackageManager
@@ -22,6 +23,7 @@ import androidx.camera.core.Preview
 import androidx.camera.lifecycle.ProcessCameraProvider
 import androidx.camera.view.PreviewView
 import androidx.core.app.ActivityCompat
+import androidx.core.content.ContentProviderCompat.requireContext
 import androidx.core.content.ContextCompat
 import androidx.core.content.ContextCompat.startActivity
 import androidx.lifecycle.Observer
@@ -38,6 +40,7 @@ import org.tensorflow.lite.support.model.Model
 
 import java.util.concurrent.Executors
 import org.tensorflow.lite.gpu.CompatibilityList
+import java.security.AccessController.getContext
 
 // Constants
 private const val MAX_RESULT_DISPLAY = 3 // Maximum number of results displayed
@@ -233,8 +236,12 @@ class MainActivityTensorflowCamera : AppCompatActivity() {
             for (output in outputs) {
                 items.add(Recognition(output.label, output.score))
                 if(output.score > 80) {
-                    val recognizedBeer = output.label
                     //TODO Return to main activity with label 'recognizedBeer' as extra parameter
+                    val recognizedBeer = output.label
+                    val intent = Intent(this@MainActivityTensorflowCamera, MainActivity::class.java).apply{
+                        putExtra("recognizedBeer",recognizedBeer)
+                    }
+                    startActivity(intent)
                 }
 
                 Log.i(TAG, "Label: " + output.label + " || Score: " + output.score)
@@ -248,9 +255,6 @@ class MainActivityTensorflowCamera : AppCompatActivity() {
 
             // Return the result
             listener(items.toList())
-
-            // TODO : Remove, just for testing purposes -> kiwi
-            Log.i(TAG, items.toString())
 
             // Close the image,this tells CameraX to feed the next image to the analyzer
             imageProxy.close()
